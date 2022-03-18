@@ -1,0 +1,33 @@
+.search {
+    display: flex;
+}
+.main {
+    background-color: lightskyblue;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+}
+.left-side,
+.right-side {
+    flex: 0 0 50%;
+}
+.right-side {
+    display: flex;
+    flex-direction: column;
+}
+.pokeStats{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.stat {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.pokeMoves{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.move{
+    padding: 5px;
+    border-bottom: 1px solid #000;
+}
