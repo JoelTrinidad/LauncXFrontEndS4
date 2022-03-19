@@ -1,5 +1,5 @@
 const fetchPokemon = () => {
-    const pokeName = document.getElementById("pokeName");
+    const pokeName = document.getElementById("pokeName-search");
     let pokeInput = pokeName.value.toLowerCase();
     const url = `https://pokeapi.co/api/v2/pokemon/${pokeInput}`
     fetch(url).then((res) => {
@@ -12,11 +12,10 @@ const fetchPokemon = () => {
     }).then((data)=>{
         console.log(data);
         let pokeImg = data.sprites.front_default;
-        let id = data.id
         let name = data.name;
         let types = getPokeTypes(data.types);
         pokeImage(pokeImg);
-        pokeId(id, name);
+        pokeId(name);
         pokeTypes(types);
         pokeMoves(data.moves);
         pokeStats(data.stats)
@@ -28,16 +27,16 @@ const pokeImage = (url) => {
     pokeImg.src = url;
 }
     
-const pokeId = (id, name) => {
-    const pokeName = document.getElementById("pokeId");
-    pokeName.innerHTML = `${id} - ${name}`;
+const pokeId = (name) => {
+    const pokeName = document.getElementById("pokeName");
+    pokeName.innerHTML = `${name}`;
 }
 
 const pokeTypes = (types) => {
     const pokeTypes = document.getElementById("pokeTypes");
     pokeTypes.innerHTML = ''
     types.forEach(type => {
-        pokeTypes.innerHTML += `<li>${type}</li>
+        pokeTypes.innerHTML += `<li class="type">${type}</li>
         `;
     });
 

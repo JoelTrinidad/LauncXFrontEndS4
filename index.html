@@ -11,20 +11,20 @@
 <body>
     <h1>Pokedex LaunchX</h1>
     <div class="search">
-        <input type="text" class="search__input" placeholder="Pikachu" id="pokeName" name="pokeName">
+        <input type="text" class="search__input" placeholder="Pikachu" id="pokeName-search" name="pokeName-search">
         <button class="search__button" onclick="fetchPokemon()">Cambiar pokemon</button>
     </div>
     <main class="main">
         <div class="left-side">
-            <img src="./assets/img/pokeball.png" alt="Pokemon" id="pokeImg" width="150px"> <br>
-            <h2 id="pokeId"></h2>
-            <ul id="pokeTypes">
+            <img src="./assets/img/pokeball.png" alt="Pokemon" id="pokeImg">
+            <h2 class="pokeName" id="pokeName"></h2>
+            <ul class="pokeTypes" id="pokeTypes">
         
+            </ul>
+            <ul class="pokeStats" id="pokeStats">
             </ul>
         </div>
         <div class="right-side">
-            <ul class="pokeStats" id="pokeStats">
-            </ul>
             <ul class="pokeMoves" id="pokeMoves">
             </ul>
         </div>
