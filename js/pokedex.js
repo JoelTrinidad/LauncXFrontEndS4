@@ -12,6 +12,7 @@ const fetchPokemon = () => {
     }).then((data)=>{
         console.log(data);
         let pokeImg = data.sprites.front_default;
+            pokeImg = data.sprites.other['official-artwork'].front_default;
         let name = data.name;
         let types = getPokeTypes(data.types);
         pokeImage(pokeImg);
@@ -36,7 +37,7 @@ const pokeTypes = (types) => {
     const pokeTypes = document.getElementById("pokeTypes");
     pokeTypes.innerHTML = ''
     types.forEach(type => {
-        pokeTypes.innerHTML += `<li class="type">${type}</li>
+        pokeTypes.innerHTML += `<li class="type ${type}">${type}</li>
         `;
     });
 
